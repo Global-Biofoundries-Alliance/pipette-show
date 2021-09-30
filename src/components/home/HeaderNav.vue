@@ -13,7 +13,7 @@
 </router-link>
 
 
-<li><a href="https://git.rwth-aachen.de/pipette-show/pipette-show" onclick="alert('Coming Soon.'); return false;">Developement (Git)<span uk-icon="icon: link; ratio: 0.9"></span></a></li>
+<li><a href="https://github.com/Global-Biofoundries-Alliance/pipette-show">Developement (Git)<span uk-icon="icon: link; ratio: 0.9"></span></a></li>
     
 
 <router-link
