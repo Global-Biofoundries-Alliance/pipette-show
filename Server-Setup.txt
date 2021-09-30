@@ -1,0 +1,84 @@
+This document explains how to install and run PipetteShow on an existing ubuntu server.
+
+Update package list
+sudo apt update
+
+install latest version of nodejs
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt install nodejs
+
+Install npm package manager and update to latest version:
+sudo apt install npm
+sudo npm install --global npm
+
+Create a folder for the server application to run:
+cd /opt
+sudo mkdir pipetteshow
+cd pipetteshow
+
+Upload all contents of the "server" folder from the pipetteshow-repository into this folder...
+
+Then run:
+sudo npm install
+
+Create a folder for the data to be served
+cd /srv
+sudo mkdir pipetteshow
+
+Upload all contents of the "dist" folder from the pipetteshow-repository into this folder...
+
+Create temp folder
+cd pipetteshow/
+mkdir temp
+
+Change back to the server
+cd /opt/pipetteshow/
+
+Install pm2
+sudo npm install --global pm2
+
+Deamonize the server
+sudo pm2 start app.js
+
+Make pm2 auto-start on Server boot:
+startup pm2
+And follow the instructions
+
+Obtain ssl certificates following
+https://certbot.eff.org/lets-encrypt/ubuntufocal-other
+
+Add a deploy script to certbot:
+cd /etc/letsencrypt/renewal-hooks/deploy
+sudo nano copy-to-pipetteshow
+
+Insert:
+cp /etc/letsencrypt/live/pipette-show.de/fullchain.pem /opt/pipetteshow/certs/fullchain.pem
+cp /etc/letsencrypt/live/pipette-show.de/privkey.pem /opt/pipetteshow/certs/privkey.pem
+chmod ug+r /opt/pipetteshow/certs/fullchain.pem
+chmod ug+r /opt/pipetteshow/certs/privkey.pem
+pm2 restart app
+
+Save the file. Make it executable:
+sudo chmod +x copy-to-pipetteshow
+
+Run the file once:
+sudo ./copy-to-pipetteshow
+
+Add port forwarding to our application:
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 8443
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
+
+Export the forwarding script:
+sudo -i
+sudo iptables-save > /etc/iptables.rules
+
+Request bootup-execution of the script:
+echo 'iptables-restore < /etc/iptables.rules' | sudo tee /etc/networkd-dispatcher/routable.d/50-iptables-restore
+
+Edit file to make it run as shell script:
+sudo nano /etc/networkd-dispatcher/routable.d/50-iptables-restore
+insert at the beginning of the file:
+#!/bin/sh
+
+Make the file executable:
+sudo chmod+x /etc/networkd-dispatcher/routable.d/50-iptables-restore
