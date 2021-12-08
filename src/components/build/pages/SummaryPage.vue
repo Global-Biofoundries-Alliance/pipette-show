@@ -25,11 +25,11 @@
                     
                       <dt>Smallest volume:</dt>
                       
-                        <dd class="uk-padding-small">{{ statistics.smallestVolume }}</dd>
+                        <dd class="uk-padding-small">{{ statistics.smallestVolume }} {{ unit }}</dd>
                       
                       <dt>Largest Volume:</dt>
                      
-                        <dd class="uk-padding-small">{{ statistics.largestVolume }}</dd>
+                        <dd class="uk-padding-small">{{ statistics.largestVolume }} {{ unit }}</dd>
                   </dl>
                 </div>
                 <div class="">
@@ -177,8 +177,8 @@ export default {
         pipetting: pipetting,
         substanceChanges: substance,
         wells: res.wells,
-        largestVolume: res.largestVolume,
-        smallestVolume: res.smallestVolume,
+        largestVolume: (res.largestVolume).toFixed(4),
+        smallestVolume: (res.smallestVolume).toFixed(4),
       };
     },
   },
