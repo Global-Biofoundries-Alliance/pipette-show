@@ -281,7 +281,7 @@ function getSizeInPx(sizeInCm) {
     align-items: center;
     justify-content: center;
 
-    background-color: #00000088;
+    //background-color: #00000088;
   }
 
   svg.resize-handle {

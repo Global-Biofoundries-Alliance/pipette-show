@@ -58,6 +58,11 @@ export default {
       return this.$store.state.show.file.substances[currentInstruction.substance].color;
     },
 
+    resizing: function () {
+      console.log("resize");
+      return this.$store.state.show.resizing;
+    },
+
   },
 
   methods: {
@@ -71,7 +76,10 @@ export default {
 
     getWellColor: function (wellId) {
       var classes = [];
-
+      if (this.resizing) {
+        console.log("returned fff");
+        return '#fff';
+        }
       if (!Array.isArray(this.highlightedWell) && this.highlightedWell === wellId) {
         return this.currentSubstanceColor;
         }
