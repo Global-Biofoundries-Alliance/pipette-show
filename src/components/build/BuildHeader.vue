@@ -33,6 +33,8 @@
       >
         <font-awesome-icon v-if="!tool.divider" :icon="tool.icon" />
       </div>
+      <div class="divider"></div>
+      <div class="tool">All amounts are given in {{unit}}.</div>
     </div>
   </div>
 </template>
@@ -63,6 +65,7 @@ export default {
     return {
       tableColumnSelected: false,
       tableRowSelected: false,
+      unit: "µl"
     };
   },
 
