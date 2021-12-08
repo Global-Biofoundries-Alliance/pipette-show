@@ -1,6 +1,7 @@
 <template>
   <div id="resize-dialog">
     <p>Use the yellow triangles to resize the plate.</p>
+    <p>Drag the red circle to move the plate.</p>
     <div>
       <vibration-button @click="restoreDefaults"
         >Restore Defaults</vibration-button

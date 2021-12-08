@@ -47,6 +47,16 @@
           </svg>
           <svg
             draggable="false"
+            data-position="c"
+            class="move-handle"
+            @pointerdown="dragResizeHandle"
+            viewBox="0 0 50 50"
+            style="margin-left: auto; margin-right: auto;margin-top: auto; margin-bottom: auto;"
+          >
+            <circle draggable="false" r="20" cx="25" cy="25" />
+          </svg>
+          <svg
+            draggable="false"
             data-position="bl"
             class="resize-handle"
             @pointerdown="dragResizeHandle"
@@ -191,19 +201,42 @@ export default {
 
       let platePosition = this.platePosition;
 
-      if (["tl", "bl"].includes(this.draggingStartPosition.handle))
+
+      if (["tl", "bl","c"].includes(this.draggingStartPosition.handle))
         platePosition.left += dx;
 
-      if (["tl", "tr"].includes(this.draggingStartPosition.handle))
+      if (["tl", "tr","c"].includes(this.draggingStartPosition.handle))
         platePosition.top += dy;
 
-      if (["tr", "br"].includes(this.draggingStartPosition.handle))
+      if (["tr", "br","c"].includes(this.draggingStartPosition.handle))
         platePosition.right += dx;
 
-      if (["bl", "br"].includes(this.draggingStartPosition.handle))
+      if (["bl", "br","c"].includes(this.draggingStartPosition.handle))
         platePosition.bottom += dy;
 
-      if (platePosition.top < 0) this.platePosition.top = 0;
+      if (["c"].includes(this.draggingStartPosition.handle))
+        {
+        let plateWidth = platePosition.right-platePosition.left;
+        let plateHeight = platePosition.bottom-platePosition.top;
+
+          if (platePosition.top < 0) {
+            platePosition.bottom = plateHeight;
+            platePosition.top = 0;
+          }
+
+          if (platePosition.left < 0) {
+            platePosition.right = plateWidth;
+            platePosition.left = 0;
+          }
+          console.log(platePosition.right);
+          if (window.innerWidth - platePosition.right < 0) {
+            platePosition.left = window.innerWidth - plateWidth;
+            platePosition.right = window.innerWidth;
+          }
+        }
+
+      if (["bl","br","tl","tr"].includes(this.draggingStartPosition.handle))
+        if (platePosition.top < 0) this.platePosition.top = 0;
 
       this.platePosition = platePosition;
       this.draggingStartPosition.x = e.screenX;
@@ -293,6 +326,20 @@ function getSizeInPx(sizeInCm) {
     polygon {
       cursor: pointer;
       fill: #ffcc66;
+      stroke: black;
+      stroke-width: 1;
+    }
+  }
+
+  svg.move-handle {
+    position: absolute;
+    height: 40%;
+    min-height: 50px;
+    max-height: 100px;
+
+    circle {
+      cursor: pointer;
+      fill: #bd2323;
       stroke: black;
       stroke-width: 1;
     }
