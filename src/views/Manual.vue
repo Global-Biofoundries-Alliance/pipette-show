@@ -154,7 +154,7 @@ If the tablet is in landscape orientation, Pipette Show now asks to rotate the t
   
   
     <h3 id="enjoypipetting">Enjoy Pipetting</h3>
-    With this, everything is ready to start pipetting. Every time the <b>Next</b> button is pressed, the next instruction is shown and, if applicable, the corresponding well is highlighted. For left-handed users, there is also a mode to move the <b>Next</b> button to the right (can be found in the <b>Settings</b> menu. 
+    With this, everything is ready to start pipetting. Every time the <b>Next</b> button is pressed, the next instruction is shown and, if applicable, the corresponding well is highlighted. For left-handed users, there is also a mode to move the <b>Next</b> button to the right (can be found in the <b>Settings</b> menu. Pro-tip: If required, instead of hitting next, you can buy a bluetooth pedal to execute the next action with your feet. Just search the internet for "bluetooth pedal page turner".
     
 <h2 id="furtherquestions">Further Questions</h2>
 <p>If anything is unclear please do not hesitate to contact the developers via mail (pipette-show@kabisch-lab.de) or open an issue on our developement page.</p>
