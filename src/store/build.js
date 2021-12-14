@@ -194,6 +194,7 @@ const buildModule = {
         name = getDefaultName();
 
       //Insert empty rows to fill up to the desired well count
+      state.plate =  plates["MWP 24"];
       var values = [];
       for (let i = 0; i < state.plate.wells; i++) {
         values.push([0, 0]);
