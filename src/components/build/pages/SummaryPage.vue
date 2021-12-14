@@ -80,7 +80,7 @@
                         Put {{
                           $store.state.build.file.substances[v.substance].name
                         }} in wells 
-                            <li v-for="i in v.well">
+                            <li v-for="i in v.well" :key="i">
                              {{ wellName(i)}}                            
                               </li>
                         </template>
