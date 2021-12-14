@@ -113,9 +113,9 @@
     <!-- BODY -->
     <div class="body uk-flex-auto uk-section uk-section-small">
       <!-- data-uk-height-viewport="expand: true"-->
-      <div class="uk-container">
+     
         <slot />
-      </div>
+     
       <!-- container -->
     </div>
     <!-- section -->

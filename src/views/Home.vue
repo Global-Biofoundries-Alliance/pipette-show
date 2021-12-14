@@ -1,7 +1,9 @@
 <template>
   <page-layout class="home" :show-buttons=true>
+    <div class="uk-container">
+     
     <header class="uk-text-center">
-      <h1 class="uk-heading-primary serifs">
+      <h1 class="serifs">
         Because Pipetting is Complicated Enough
       </h1>
       <div class="uk-text-lead uk-width-2xlarge uk-margin-auto">
@@ -43,16 +45,19 @@
         </home-card>
       </div>
     </div>
+    <div class="uk-section">
      <div class="uk-container uk-margin-top">
          <div class="uk-text-lead uk-width-2xlarge uk-text-center uk-margin-auto">
            Download 3D printing files for simple plate holder
         <router-link
-  to="/plateholder"
->
-here
-</router-link>
+        to="/plateholder"
+      >
+      here
+      </router-link>
          </div>
      </div>
+     </div>
+    
     <!--<div class="uk-section uk-section-large">
       <div class="uk-container">
          
@@ -70,6 +75,18 @@ here
         </div>
 
     </div>-->
+
+      </div>
+      <div class="uk-container">
+       <div class="uk-section uk-section-secondary uk-light uk-margin">
+    <div class="uk-container">
+      <h3 class="uk-text-center serifs uk-h2">Get an impression of Pipette Show's Features</h3>
+<video class="uk-padding" src="../assets/pipette_show_demo_video.mp4" loop muted playsinline uk-video="autoplay: inview" controls></video>
+</div>
+    </div>
+</div>
+       
+    
   </page-layout>
 </template>
 
