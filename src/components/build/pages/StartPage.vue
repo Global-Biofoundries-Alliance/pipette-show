@@ -134,9 +134,9 @@ export default {
         //Override url-parameter in order to save this file back to google drive per default in export-page
         this.$emit('change-query-state', {action: "open", ids: [fileId]});        
 
-        this.$eventbus.emit("show-dialog", {
-          dialog: "drive-install"          
-        });
+        //this.$eventbus.emit("show-dialog", {
+        //  dialog: "drive-install"          
+        //});
 
         this.nextStep();
       });
