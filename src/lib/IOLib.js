@@ -663,7 +663,6 @@ async function getGoogleDriveFile($store, oAuthToken, fileId, name, target, afte
     fileId: fileId,
     alt: "media", //request content instead of metadata
   });
-  console.log("before stringFile. Name: ", name, "FileID: ", fileId)
   command.execute(function (fileContent) {
     //Load instructions
     let success = stringFileUploaded($store, name, JSON.stringify(fileContent), target);
