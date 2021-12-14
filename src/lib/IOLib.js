@@ -581,7 +581,10 @@ function stringFileUploaded($store, fname, content, target) {
     }
   } catch (ex) {
     alert("The uploaded file seems to be corrupted and cannot be parsed.");
+    $store.commit("build/createNewfile");
+    return(false);
   }
+  return(true);
 }
 
 /* global google */
@@ -660,12 +663,13 @@ async function getGoogleDriveFile($store, oAuthToken, fileId, name, target, afte
     fileId: fileId,
     alt: "media", //request content instead of metadata
   });
+  console.log("before stringFile. Name: ", name, "FileID: ", fileId)
   command.execute(function (fileContent) {
     //Load instructions
-    stringFileUploaded($store, name, JSON.stringify(fileContent), target);
+    let success = stringFileUploaded($store, name, JSON.stringify(fileContent), target);
     
     //Go to next Step
-    if (afterLoaded !== undefined)
+    if (afterLoaded !== undefined && success)
       afterLoaded(fileId);
   });  
 }
