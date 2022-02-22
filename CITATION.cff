@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Falk"
+  given-names: "Johannes"
+  orcid: "https://orcid.org/0000-0001-8496-6221"
+- family-names: "Mendler"
+  given-names: "Marc"
+  orcid: "http://orcid.org/0000-0001-8492-1760"
+- family-names: "Kabisch"
+  given-names: "Johannes"
+  orcid: "https://orcid.org/0000-0002-9679-3038"
+title: "Pipette Show"
+date-released: 2021-09-30
+url: "https://github.com/Global-Biofoundries-Alliance/pipette-show"
+preferred-citation:
+  type: article
+  journal: "ACS Synthetic Biology"
+  authors:
+  - family-names: "Falk"
+    given-names: "Johannes"
+    orcid: "https://orcid.org/0000-0001-8496-6221"
+  - family-names: "Mendler"
+    given-names: "Marc"
+    orcid: "http://orcid.org/0000-0001-8492-1760"
+  - family-names: "Kabisch"
+    given-names: "Johannes"
+    orcid: "https://orcid.org/0000-0002-9679-3038"
+  doi: 10.1021/acssynbio.1c00494
+  start: 996
+  end: 999
+  volume: 11
+  issue: 2
+  year: 2022
+  title: "Pipette Show: An Open Source Web Application to Support Pipetting into Microplates"
+    
