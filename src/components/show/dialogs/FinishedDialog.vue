@@ -10,10 +10,14 @@
   </div>  
 
   <div id="finished-dialog" v-else>
-    <p>
+    <div class="uk-display-block">
       Finished!<br/>
+      If you like Pipette Show please consider citing our paper:  <br/>
+<div class="uk-alert uk-alert-primary uk-display-block uk-text-large">
+    Falk, J., Mendler, M., Kabisch, J., 2022. <cite>Pipette Show: An Open Source Web Application to Support Pipetting into Microplates</cite>. ACS Synth. Biol. <br><a href="https://doi.org/10.1021/acssynbio.1c00494">https://doi.org/10.1021/acssynbio.1c00494</a>
+    </div>
       Do you want to repeat the experiment or load a new one?
-    </p>
+    </div>
     <div>
       <vibration-button @click="restartPipetting">Repeat</vibration-button>
       <vibration-button @click="stopPipetting">Load new Experiment</vibration-button>

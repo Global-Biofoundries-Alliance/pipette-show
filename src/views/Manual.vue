@@ -155,6 +155,12 @@ If the tablet is in landscape orientation, Pipette Show now asks to rotate the t
   
     <h3 id="enjoypipetting">Enjoy Pipetting</h3>
     With this, everything is ready to start pipetting. Every time the <b>Next</b> button is pressed, the next instruction is shown and, if applicable, the corresponding well is highlighted. For left-handed users, there is also a mode to move the <b>Next</b> button to the right (can be found in the <b>Settings</b> menu. Pro-tip: If required, instead of hitting next, you can buy a bluetooth pedal to execute the next action with your feet. Just search the internet for "bluetooth pedal page turner".
+
+<h2 id="citeus">Cite Pipette Show</h2>
+If you like Pipette Show please consider citing our paper:  <br>
+<p class="uk-alert uk-padding uk-alert-primary">
+    Falk, J., Mendler, M., Kabisch, J., 2022. <cite>Pipette Show: An Open Source Web Application to Support Pipetting into Microplates</cite>. ACS Synth. Biol. <a href="https://doi.org/10.1021/acssynbio.1c00494">https://doi.org/10.1021/acssynbio.1c00494</a>
+    </p>    
     
 <h2 id="furtherquestions">Further Questions</h2>
 <p>If anything is unclear please do not hesitate to contact the developers via mail (pipette-show@kabisch-lab.de) or open an issue on our developement page.</p>

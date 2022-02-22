@@ -47,6 +47,14 @@
     </div>
     <div class="uk-section">
      <div class="uk-container uk-margin-top">
+         <div class="uk-text-lead uk-text-center uk-margin-auto">
+           If you like Pipette Show please consider citing our paper:  <br>
+<p class="uk-alert uk-padding uk-alert-primary">
+    Falk, J., Mendler, M., Kabisch, J., 2022. <cite>Pipette Show: An Open Source Web Application to Support Pipetting into Microplates</cite>. ACS Synth. Biol. <a href="https://doi.org/10.1021/acssynbio.1c00494">https://doi.org/10.1021/acssynbio.1c00494</a>
+    </p>
+          </div>
+          <br>
+         
          <div class="uk-text-lead uk-width-2xlarge uk-text-center uk-margin-auto">
            Download 3D printing files for simple plate holder
         <router-link
@@ -112,7 +120,7 @@ export default {
     color: #7d8284;
   }
 
-  p {
+  p:not(.uk-alert) {
     color: #7d8284;
   }
   .uk-label {
