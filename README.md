@@ -15,11 +15,12 @@
 
 
 ## Project setup
+For detailed instructions, see the file [Server-Setup.txt](https://github.com/Global-Biofoundries-Alliance/pipette-show/blob/main/Server-Setup.txt)
 
 ```
 npm install
 ```
-Remember to put your Google Drive API-Keys into a .env.local-file at project root level (see .env.local.example).
+Remember to put your Google Drive API-Keys into a .env.local-file at project root level (see .env.local.example). **(The google drive feature might be depricated soon, since we do not have the time to keep the Oauth-requirements from Google up to date.)**
 
 ### Compiles and hot-reloads for development
 ```
