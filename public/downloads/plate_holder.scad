@@ -1,11 +1,11 @@
-// This file belongs to the pipette-show.de web service
+//This file belongs to the pipette-show.de web service
 
 
 $fs = 0.01;
 outerLength = 148;
 outerWidth = 95;
 height = 4;
-plateLength = 129; 
+plateLength = 128.5; 
 plateWidth = 86;
 nipplesDiameter = 4;
 nipplesHeight = 9;
